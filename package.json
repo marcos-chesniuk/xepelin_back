@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "express": "^4.17.3",
+    "ts-node": "^10.7.0",
     "node-postgres": "^0.6.2",
     "pg": "^8.7.3"
   }
