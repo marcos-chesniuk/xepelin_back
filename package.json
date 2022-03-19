@@ -4,10 +4,11 @@
   "description": "",
   "main": "dist/app.js",
   "scripts": {
-    "start": "tsc && node ./dist/app.js",
-    "start:nodemon": "tsc && cross-env NODE_ENV=development nodemon ./node_modules/nodemon/bin/nodemon.js",
+    "start": "npm run tsc && node ./dist/app.js",
+    "start:nodemon": "npm run tsc && cross-env NODE_ENV=development nodemon ./node_modules/nodemon/bin/nodemon.js",
     "start:prod": "npm run build && node ./dist/app.js",
-    "build": "npx tsc"
+    "build": "npx tsc",
+    "tsc": "tsc"
   },
   "repository": {
     "type": "git",
