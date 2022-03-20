@@ -1,6 +1,6 @@
 import { TypedRequestBody, ClientCreateBody } from "../utils/interfaces/request";
 import { Response } from "express";
-const { OK_RESPONSE, ERROR_RESPONSE } = require("../utils/constants");
+const { OK_RESPONSE, ERROR_RESPONSE } = require("../utils/responses");
 
 const Router = require('express-promise-router');
 const db = require('../db/queries');
