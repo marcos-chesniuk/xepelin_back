@@ -2,7 +2,6 @@ const cron = require('node-cron');
 const axios = require('axios');
 const csvtojson = require('csvtojson');
 const db = require('../db/connection');
-const dbQuery = require('../db/queries');
 
 const getVankInfo = () => {
     console.log('Updating Invoice INFO...');
