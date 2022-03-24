@@ -198,3 +198,9 @@ Se pueden filtrar los resultados si se ingresan los parámetros query *vendorId*
 ### Postman collection
 
 Adjunto en el mail se encuentra la colección de Postman necesaria para probar la api. 
+
+---
+
+### Tareas programadas
+
+Se programó por medio de un cron que todos los días a las 07:00 AM se realice la lectura del archivo CSV brindado como fuente de datos.
