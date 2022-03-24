@@ -3,7 +3,7 @@ const clients = require('./clients');
 const invoices = require('./invoices');
 
 module.exports = app => {
-    app.get('/', (req: any, res: Response) => {
+    app.get('/healtz', (req: any, res: Response) => {
         res.send('Test OK!');
     });
     

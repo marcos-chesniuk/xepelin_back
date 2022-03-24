@@ -40,19 +40,17 @@ router.get('/list/:currencyId?', async (req: any, res: Response) => {
             SELECT "INVOICE_ID", "VENDOR_ID", "INVOICE_NUMBER", "INVOICE_TOTAL", "PAYMENT_TOTAL", "CREDIT_TOTAL", "BANK_ID", "CURRENCY"
                 FROM "INVOICES"${whereClause}
         `);
-        // console.log(rows)
         result = await convertCurrency(rows, parseInt(currencyId, 10));
 
         status = 200;
         message = OK_RESPONSE;
 
     } catch (error) {
-        console.log(error)
         status = 500;
         message = ERROR_RESPONSE(error.detail);
         
     } finally {
-        message.result = result;
+        if (result) message.result = result;
         res.status(status).send(message);
     };
 });
@@ -74,6 +72,13 @@ const convertCurrency = async (data: Array<DbInvoice>, currencyId: number): Prom
     const currencies: any[] = rows;
 
     const currencyToIndex = currencies.findIndex( x => x.id === currencyId );
+
+    if (currencyToIndex === -1) {
+        throw {
+            detail: `There is no currency with id ${currencyId}`
+        }
+    }
+
     const currencyTo = currencies.splice(currencyToIndex, 1)[0];
 
     let converterUrl = `${process.env.C_CONV_URL}convert?q=`;
