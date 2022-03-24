@@ -15,7 +15,7 @@ const cn = {
     user: process.env.PGUSER,
     password: process.env.PGPASSWORD,
     max: 30, // use up to 30 connections
-    ssl: process.env.NODE_ENV === 'development' ? false : ssl
+    ssl: ssl
 };
 
 const pgpDb = pgPromise(cn);

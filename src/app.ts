@@ -1,4 +1,4 @@
-if (process.env.NODE_ENV === 'prod') {
+if (process.env.NODE_ENV === 'development') {
   require('dotenv').config({ path: __dirname+'/../.env' });
 };
 import express from 'express';

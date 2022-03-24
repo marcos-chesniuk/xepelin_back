@@ -5,7 +5,7 @@ const ssl = {
 }
 
 const pool = new Pool({
-  ssl: process.env.NODE_ENV === 'development' ? false : ssl
+  ssl: ssl
 });
 
 const query = (text, params, callback) => {
