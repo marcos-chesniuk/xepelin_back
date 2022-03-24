@@ -11,11 +11,6 @@ const jsonParser = bodyParser.json();
 const router = new Router();
 module.exports = router;
 
-router.get('/list', async (req: any, res: Response) => {
-    const { rows } = await db.query('SELECT * FROM clients ORDER BY ID ASC');
-    res.status(200).send(rows);
-});
-
 router.post('/create', jsonParser, async (req: TypedRequestBody<ClientCreateBody>, res: Response) => {
     const params = req.body;
 
