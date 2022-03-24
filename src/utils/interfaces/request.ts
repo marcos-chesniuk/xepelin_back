@@ -2,13 +2,18 @@ import { Request } from "express";
 
 export interface TypedRequestBody<T> extends Request {
     body: T
-}
+};
 
 export interface ClientCreateBody {
-    internalId: Number,
-    companyName: String,
-    taxId: String,
-    currencyId: Number,
-    monthlyQuota: Number,
-    bankRegistry: Array<Number>
-}
+    internalCode: number,
+    companyName: string,
+    taxId: string,
+    currencyId: number,
+    monthlyQuota: number,
+    bankRegistry: Array<number>
+};
+
+export interface ClientEditBody {
+    taxId: string,
+    currencyId: number
+};
