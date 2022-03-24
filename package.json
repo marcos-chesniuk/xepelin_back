@@ -8,7 +8,7 @@
     "start:nodemon": "cross-env NODE_ENV=development nodemon ./node_modules/nodemon/bin/nodemon.js -e ts  --exec \"npm run start:prod\"",
     "start:prod": "npm run build && node ./dist/app.js",
     "postinstall": "npm run build",
-    "build": "tsc"
+    "build": "npx tsc"
   },
   "repository": {
     "type": "git",
