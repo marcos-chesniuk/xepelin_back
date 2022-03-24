@@ -91,25 +91,25 @@ Crear un nuevo cliente
     - body:
         ```json
         {
-            "internalCode": number,
-            "companyName": string,
-            "taxId": string,
-            "currencyId": number,
-            "monthlyQuota": number,
-            "bankRegistry": Array<number>
+            "internalCode": 547,
+            "companyName": "Company Name & Co.",
+            "taxId": "2.784.214-7",
+            "currencyId": 1,
+            "monthlyQuota": 1000,
+            "bankRegistry": "[12, 421, 763]"
         }
         ```
     - response:
         - success:
             ```json
             {
-                "message": 'Operation completed successfully'
+                "message": "Operation completed successfully"
             }
             ```
         - error:
             ```json
             {
-                "message": `Error: {{MESSAGE}}`
+                "message": "Error: {{MESSAGE}}"
             }
             ```
 
@@ -118,27 +118,27 @@ Crear un nuevo cliente
     - body:
         ```json
         {
-            "taxId": string,
-            "currencyId": number
+            "taxId": "2.222.222-2",
+            "currencyId": 3
         }
         ```
     - headers:
         ```json
         {
-            "internalcode": number
+            "internalcode": 471
         }
         ```
     - response:
         - success:
             ```json
             {
-                "message": 'Operation completed successfully'
+                "message": "Operation completed successfully"
             }
             ```
         - error:
             ```json
             {
-                "message": `Error: {{MESSAGE}}`
+                "message": "Error: {{MESSAGE}}"
             }
             ```
 
@@ -151,21 +151,21 @@ Se pueden filtrar los resultados si se ingresan los parámetros query *vendorId*
     - params:
         ```json
         {
-            "currencyId": number
+            "currencyId": 1
         }
         ```
     - params (query):
         ```json
         {
-            "vendorId"?: string,
-            "invoiceDateStart"?: date,
-            "invoiceDateEnd"?: date
+            "vendorId"?: 123,
+            "invoiceDateStart"?: "2022-MAY-01",
+            "invoiceDateEnd"?: "2022-JUN-26"
         }
         ```
     - headers:
         ```json
         {
-            "clientcurrencyid": number
+            "clientcurrencyid": 2
         }
         ```
     - response:
@@ -175,13 +175,13 @@ Se pueden filtrar los resultados si se ingresan los parámetros query *vendorId*
                 "message": 'Operation completed successfully',
                 "result": [
                     {
-                        "invoiceId": number,
-                        "vendorId": number,
-                        "invoiceNumber": string,
-                        "invoiceTotal": number,
-                        "paymentTotal": number,
-                        "creditTotal": number,
-                        "bankId": number
+                        "invoiceId": 856,
+                        "vendorId": 123,
+                        "invoiceNumber": "9Q-7547",
+                        "invoiceTotal": 198,74,
+                        "paymentTotal": 198,74,
+                        "creditTotal": 0,
+                        "bankId": 447
                     },
                     ...
                 ]
@@ -190,7 +190,7 @@ Se pueden filtrar los resultados si se ingresan los parámetros query *vendorId*
         - error:
             ```json
             {
-                "message": `Error: {{MESSAGE}}`
+                "message": "Error: {{MESSAGE}}"
             }
             ```
 ---
