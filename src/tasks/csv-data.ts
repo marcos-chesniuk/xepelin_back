@@ -3,6 +3,10 @@ const axios = require('axios');
 const csvtojson = require('csvtojson');
 const db = require('../db/connection');
 
+/**
+ * Downloads CSV data from an url and stores it into the DB
+ */
+
 const getVankInfo = () => {
     console.log('Updating Invoice INFO...');
     axios.get(process.env.CSV_URL, { responseType: 'blob' })
@@ -38,6 +42,11 @@ const getVankInfo = () => {
         });
 };
 
+/**
+ * Replace dates within CSV parsed data with Date objects
+ * @param data CSV parsed info
+ * @returns CSV parsed info with string dates transformed into Date objects
+ */
 const translateDates = (data: Array<any>): Array<any> => {
     const translatedData = [...data];
     translatedData.map(row => {
