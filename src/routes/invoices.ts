@@ -5,11 +5,7 @@ const { OK_RESPONSE, ERROR_RESPONSE } = require("../utils/responses");
 const axios = require('axios');
 
 const Router = require('express-promise-router');
-// const bodyParser = require('body-parser');
 const db = require('../db/queries');
-
-
-// const jsonParser = bodyParser.json();
 
 const router = new Router();
 module.exports = router;
