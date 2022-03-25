@@ -17,6 +17,9 @@ router.get('/list/:currencyId?', async (req: any, res: Response) => {
     const invoiceDateStart = req.query.invoiceDateStart;
     const invoiceDateEnd = req.query.invoiceDateEnd;
 
+    console.log(invoiceDateStart, typeof invoiceDateEnd)
+    console.log(invoiceDateEnd, typeof invoiceDateEnd)
+
     let whereClause = '';
 
     if (vendorId || invoiceDateStart || invoiceDateEnd) {
@@ -46,6 +49,7 @@ router.get('/list/:currencyId?', async (req: any, res: Response) => {
         message = OK_RESPONSE;
 
     } catch (error) {
+        console.log(error)
         status = 500;
         message = ERROR_RESPONSE(error.detail);
         
@@ -56,11 +60,11 @@ router.get('/list/:currencyId?', async (req: any, res: Response) => {
 });
 
 
-const formDateWhere = (start: string, end: string): string => {
+const formDateWhere = (start: string | undefined, end: string | undefined): string => {
     if (start && end) {
         return `"INVOICE_DATE" BETWEEN ${start} AND ${end}`;
     } else {
-        return `"INVOICE_DATE" ${start ? '>=' : '<='} ${start ? start : end}`;
+        return `"INVOICE_DATE" ${start ? '>=' : '<='} '${start ? start : end}'`;
     }
 }
 
